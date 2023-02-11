@@ -1,0 +1,1 @@
+export const NavLinkto = 'border-b-4 border-transparent hover:border-red-400 cursor-pointer';
