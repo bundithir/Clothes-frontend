@@ -1,7 +1,12 @@
+import Features from "./home-comp/app-features"
+import Hero from "./home-comp/hero-home"
+import Noctice from "./home-comp/noctice-home"
 const Home = () =>{
     return (
         <div>
-            <h2>fuck</h2>
+            <Hero/>
+            <Noctice/>
+            <Features/>
         </div>
     )
 }
