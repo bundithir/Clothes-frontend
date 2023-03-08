@@ -7,8 +7,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'hero': "url('/1000x500.gif')",
-        'card' : "url('/500x500.gif')" ,
+        'hero': "url('../public/images/1000x500.gif')",
+        'card' : "url('../public/images/500x500.gif')" ,
       }
     },
   },
