@@ -1,12 +1,15 @@
-import Features from "./home-comp/app-features"
-import Hero from "./home-comp/hero-home"
+import Features from "../../components/app-features"
+import HeroHome from "./home-comp/hero-home"
 import Noctice from "./home-comp/noctice-home"
 const Home = () =>{
     return (
         <div>
-            <Hero/>
+            <HeroHome text1={'Just arrived!'} text2={'Spring/Summer 2023 Collection'} btn={'more'} />
             <Noctice/>
-            <Features/>
+            <div className="w-[90%] mx-auto">
+                <Features/>
+            </div>
+            
         </div>
     )
 }

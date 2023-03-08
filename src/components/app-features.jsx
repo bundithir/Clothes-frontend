@@ -1,6 +1,6 @@
 const Features = () =>{
     return(
-        <div className="w-[90%] mx-auto py-[3rem]">
+        <div className="mx-auto py-[3rem]">
             <p className="text-4xl font-bold uppercase mb-[2rem]">app benefits</p>
             <div className="grid grid-cols md:grid-cols-3 items-center border-y">
                 <div className="grid grid-cols-2 items-center justify-center py-[2rem]">

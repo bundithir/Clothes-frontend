@@ -8,8 +8,11 @@ module.exports = {
     extend: {
       backgroundImage: {
         'hero': "url('./images/1000x500.gif')",
+        'card' : "url('./images/500x500.gif')" ,
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ],
 }

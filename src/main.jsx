@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Userprovider>
         <Productprovider>
           <CartProvider>
-            <App />
+            <App/>
           </CartProvider>
         </Productprovider>
       </Userprovider>
