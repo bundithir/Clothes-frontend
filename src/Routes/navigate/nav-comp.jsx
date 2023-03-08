@@ -62,7 +62,7 @@ export const CartItem =({product})=>{
         <div className="flex gap-[1rem] mb-[1rem]">
             <img src={imageUrl} alt={name} className='h-[50px] w-[50px]'/>
             <div className="flex flex-col">
-                <h1>{name}</h1>
+                <h1 className="line-clamp-1">{name}</h1>
                 <p>THB {price.toFixed(2)} x {quantity}</p>
             </div>
             
