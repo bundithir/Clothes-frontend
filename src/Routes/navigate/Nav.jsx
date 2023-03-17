@@ -1,17 +1,18 @@
-import { useContext , useState } from "react";
+import { useState } from "react";
 import { Outlet , Link} from "react-router-dom";
-import { UserContext } from "../../context/user-context";
 import { SignoutUser } from "../../utils/firebase/firebase";
 import { CartIcon, HeartIcon, Logo , LoginIcon,LogoutIcon ,BurgerIcon ,XIcon} from "./nav-comp";
-import { CartContext } from "../../context/cart-context";
 import Foot from "../../components/footer";
 import {NavLinkto} from './nav-style'
 import { Cart_Dropdown } from "./Cart-dropdown";
+import { useSelector } from 'react-redux'
+import { UserSelector } from "../../store/user/user-selector";
+import { CartOpenSelect } from "../../store/cart/cart-selector";
 
 
 const Nav =()=>{
-    const { currentUser } = useContext(UserContext)
-    const {IsCartOpen} = useContext(CartContext)
+    const currentUser = useSelector(UserSelector)
+    const IsCartOpen = useSelector(CartOpenSelect)
     const [sideOpen , SetsideOpen] = useState(false) 
     const Sidemenu = () => SetsideOpen(!sideOpen)
     const OnclickSidemenu = () => {

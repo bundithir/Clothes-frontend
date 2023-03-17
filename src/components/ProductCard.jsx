@@ -1,10 +1,12 @@
-import { useContext } from "react"
-import { CartContext } from "../context/cart-context"
+import { useDispatch, useSelector } from "react-redux"
+import { AddtoCart } from "../store/cart/cart-action"
+import { CartItemsSelect } from "../store/cart/cart-selector"
 
 const ProductCard = ({product}) =>{
     const { name , price , imageUrl} = product
-    const { AddtoCart } = useContext(CartContext)
-    const Add = () => AddtoCart(product)
+    const Cartitems = useSelector(CartItemsSelect)
+    const dispatch = useDispatch()
+    const Add = () => dispatch(AddtoCart(Cartitems,product))
     return(
         <div className="rounded shadow-xl">
             <img src={imageUrl} alt={name} className ='h-[300px] w-full rounded-t'/>

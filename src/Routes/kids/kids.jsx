@@ -1,14 +1,15 @@
-import { useContext , useEffect } from "react"
-import {ProductContext} from '../../context/products-context'
+import { useEffect } from "react"
 import { Route, Routes } from "react-router-dom"
 import KidsDefault from "./kids-comp/kids-home"
 import Shop from "../../components/Shop"
+import { useDispatch } from "react-redux"
+import { FetchProductasync } from "../../store/product/product-action"
 
 const Kids =()=>{
-    const { Getdata } = useContext(ProductContext)
+    const dispacth = useDispatch()
 
     useEffect(()=>{
-        Getdata('kids')
+        dispacth(FetchProductasync('kids'))
     },[])
 
     return(

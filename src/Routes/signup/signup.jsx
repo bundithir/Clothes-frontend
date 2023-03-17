@@ -1,9 +1,9 @@
 import SignupForm from "./signup-form";
 
-const signup = () =>{
+const Signup = () =>{
     return (
         <SignupForm />
     )
 }
 
-export default signup;
+export default Signup;

@@ -1,5 +1,6 @@
-import { useContext } from "react"
-import { CartContext } from "../../context/cart-context"
+import { useDispatch, useSelector } from "react-redux"
+import { SetIsCartOpen } from "../../store/cart/cart-action"
+import { CartCountSelect, CartOpenSelect } from "../../store/cart/cart-selector"
 
 
 export const Logo =()=>{
@@ -28,8 +29,10 @@ export const LogoutIcon = () =>{
     )
 }
 export const CartIcon = () => {
-    const { IsCartOpen , SetIsCartOpen , CartCount} = useContext(CartContext)
-    const toggle_cart = () => SetIsCartOpen(!IsCartOpen)
+    const IsCartOpen = useSelector(CartOpenSelect)
+    const CartCount = useSelector(CartCountSelect)
+    const dispatch = useDispatch()
+    const toggle_cart = () => dispatch(SetIsCartOpen(!IsCartOpen))
     return (
         <div className="relative" onClick={toggle_cart}>
             <div className="absolute bg-red-500 rounded-full text-white text-xs -right-1 px-1 -top-1 z-0">{CartCount>99?'99+':CartCount}</div>
