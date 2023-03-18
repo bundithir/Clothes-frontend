@@ -3,13 +3,13 @@ import { Route, Routes } from "react-router-dom"
 import KidsDefault from "./kids-comp/kids-home"
 import Shop from "../../components/Shop"
 import { useDispatch } from "react-redux"
-import { FetchProductasync } from "../../store/product/product-action"
+import { FetchProductasync } from "../../store/product/product-reducer"
+// import { GetDataDocument } from '../../utils/firebase/firebase'
 
 const Kids =()=>{
-    const dispacth = useDispatch()
-
+    const dispatch = useDispatch()
     useEffect(()=>{
-        dispacth(FetchProductasync('kids'))
+        dispatch(FetchProductasync('kids'))
     },[])
 
     return(

@@ -1,14 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
 import { DeleteIcon } from "../../components/Icon";
-import { AddtoCart, DeleteItemfromCart, RemovefromCart } from "../../store/cart/cart-action";
+import { AddtoCart, DeleteItemfromCart, RemovefromCart } from "../../store/cart/cart-reducer";
 import { CartItemsSelect, TotalSelect } from "../../store/cart/cart-selector";
 const Checkout = () =>{
     const CartItems = useSelector(CartItemsSelect)
     const Total = useSelector(TotalSelect)
     const dispatch = useDispatch()
-    const AddHandle = (product)=>dispatch(AddtoCart(CartItems,product))
-    const DelHandle = (product)=>dispatch(DeleteItemfromCart(CartItems,product))
-    const RemHandle = (product)=>dispatch(RemovefromCart(CartItems,product))
+    const AddHandle = (product)=>dispatch(AddtoCart(product))
+    const DelHandle = (product)=>dispatch(DeleteItemfromCart(product))
+    const RemHandle = (product)=>dispatch(RemovefromCart(product))
     return(
         <div className="w-[80%] mx-auto">
             <p className="text-center font-bold text-4xl uppercase my-[1.5rem]">checkout</p>

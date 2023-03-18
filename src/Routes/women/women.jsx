@@ -3,15 +3,15 @@ import { Route, Routes } from "react-router-dom"
 import WomenDefault from "./women-comp/women-home"
 import Shop from "../../components/Shop"
 import { useDispatch } from "react-redux"
-import { FetchProductasync } from "../../store/product/product-action"
-
+import { FetchProductasync } from "../../store/product/product-reducer"
+// import { GetDataDocument } from '../../utils/firebase/firebase'
 
 
 
 const Women =()=>{
-    const dispacth = useDispatch()
+    const dispatch = useDispatch()
     useEffect(()=>{
-        dispacth(FetchProductasync('women')) 
+        dispatch(FetchProductasync('women'))
     },[])
 
     return(

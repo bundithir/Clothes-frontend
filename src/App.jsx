@@ -9,19 +9,26 @@ import Women from './Routes/women/women'
 import Kids from './Routes/kids/kids'
 import { useEffect } from 'react'
 import { AuthUserChange , CreateUserDocFromAuth } from './utils/firebase/firebase'
-import { SetcurrentUser } from './store/user/user-action'
+import { SetcurrentUser } from './store/user/user-reducer'
 import { useDispatch } from 'react-redux'
 
 function App() {
   const dispatch = useDispatch()
   useEffect(() => {
-    const state = AuthUserChange(user => {
+    const unsubscribe = AuthUserChange(user => {
         if(user){
             CreateUserDocFromAuth(user)
+            const {accessToken , email} = user
+            const pickUser = {
+              accessToken , 
+              email
+            } 
+            dispatch(SetcurrentUser(pickUser))
+            return unsubscribe
         }
         dispatch(SetcurrentUser(user))
     })
-    return state;
+    return unsubscribe;
   },[])
   return (
     <Routes>

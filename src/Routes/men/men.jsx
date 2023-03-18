@@ -1,17 +1,17 @@
-import {  useEffect } from "react"
+import { useEffect } from "react"
 import { Route, Routes } from "react-router-dom"
 import MenDefault from "./men-comp/men-home"
 import Shop from "../../components/Shop"
 import { useDispatch } from "react-redux"
-import { FetchProductasync } from "../../store/product/product-action"
+import { FetchProductasync } from "../../store/product/product-reducer"
+// import { GetDataDocument } from '../../utils/firebase/firebase'
 
 
 
 const Men =()=>{
-    const dispacth = useDispatch()
+    const dispatch = useDispatch()
     useEffect(()=>{
-        dispacth(FetchProductasync('men'))
-        
+        dispatch(FetchProductasync('men'))
     },[])
 
     return(

@@ -1,12 +1,10 @@
 import { useDispatch, useSelector } from "react-redux"
-import { AddtoCart } from "../store/cart/cart-action"
-import { CartItemsSelect } from "../store/cart/cart-selector"
+import { AddtoCart } from "../store/cart/cart-reducer"
 
 const ProductCard = ({product}) =>{
     const { name , price , imageUrl} = product
-    const Cartitems = useSelector(CartItemsSelect)
     const dispatch = useDispatch()
-    const Add = () => dispatch(AddtoCart(Cartitems,product))
+    const Add = () => dispatch(AddtoCart(product))
     return(
         <div className="rounded shadow-xl">
             <img src={imageUrl} alt={name} className ='h-[300px] w-full rounded-t'/>

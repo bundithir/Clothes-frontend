@@ -1,23 +1,21 @@
-import { createSelector } from 'reselect'
+// import { createSelector } from 'reselect'
  
-const SelectproductsReducer = (state) => state.products
+// const SelectproductsReducer = (state) => state.products
 
-export const SelectProducts = createSelector(
-    SelectproductsReducer ,
-    (productSlice)=> {
-        return productSlice.products
-    }
-)
+// export const SelectProducts = createSelector(
+//     SelectproductsReducer ,
+//     (productSlice)=> {
+//         return productSlice.products
+//     }
+// )
 
-export const SelectLoading = createSelector(SelectproductsReducer,(productSlice) => productSlice.isLoading)
+export const SelectProducts = (state) => state.products.products
 
-export const ProductSelector = createSelector(
-    SelectProducts,
-    (products) => {
-        return products.reduce((acc , data) => {
-        const { title , items } = data
-        acc[title.toLowerCase()] = items
-        return acc
-     } ,{})
-    }
-)
+export const SelectLoading = (state) => state.products.isLoading
+
+export const ProductSelector = (state) => state.products.products.reduce((acc , data) => {
+    const { title , items } = data
+    acc[title.toLowerCase()] = items
+    return acc
+ } ,{})
+

@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux"
-import { SetIsCartOpen } from "../../store/cart/cart-action"
+import { SetIsCartOpen } from "../../store/cart/cart-reducer"
 import { CartCountSelect, CartOpenSelect } from "../../store/cart/cart-selector"
 
 
