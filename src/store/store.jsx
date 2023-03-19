@@ -38,7 +38,7 @@ export const store = configureStore({
       {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       }
-    }).concat(middlewares)
+    })
 })
 
 export const persistor = persistStore(store)

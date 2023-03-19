@@ -46,11 +46,15 @@ export const cartSlice = createSlice({
         DeleteItemfromCart : ( state , action )=>{
             state.CartItems = DeleteItem(state.CartItems , action.payload)
         } ,
+        ResetCart : (state) => {
+            state.CartItems = []
+            state.IsCartOpen = false
+        }
 
     }
 })
 
-export const { SetIsCartOpen , AddtoCart , RemovefromCart ,DeleteItemfromCart} = cartSlice.actions
+export const { SetIsCartOpen , AddtoCart , RemovefromCart ,DeleteItemfromCart ,ResetCart} = cartSlice.actions
 
 export const CartReducer = cartSlice.reducer
 

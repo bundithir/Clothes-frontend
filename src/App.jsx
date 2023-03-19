@@ -18,10 +18,11 @@ function App() {
     const unsubscribe = AuthUserChange(user => {
         if(user){
             CreateUserDocFromAuth(user)
-            const {accessToken , email} = user
+            const {accessToken , email ,displayName} = user
             const pickUser = {
               accessToken , 
-              email
+              email ,
+              displayName
             } 
             dispatch(SetcurrentUser(pickUser))
             return unsubscribe

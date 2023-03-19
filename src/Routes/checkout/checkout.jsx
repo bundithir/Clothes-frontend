@@ -1,7 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import { DeleteIcon } from "../../components/Icon";
+import { PaymentForm } from "../../components/Payment-form";
 import { AddtoCart, DeleteItemfromCart, RemovefromCart } from "../../store/cart/cart-reducer";
 import { CartItemsSelect, TotalSelect } from "../../store/cart/cart-selector";
+
 const Checkout = () =>{
     const CartItems = useSelector(CartItemsSelect)
     const Total = useSelector(TotalSelect)
@@ -43,6 +45,7 @@ const Checkout = () =>{
             <div className="my-[2rem]">
                 <p className="text-right text-xl font-bold">Total : <span className="uppercase font-normal">thb {Total.toFixed(2)}</span></p>
             </div>
+            <PaymentForm/>
         </div>
     )
 }

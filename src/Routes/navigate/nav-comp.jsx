@@ -1,6 +1,9 @@
 import { useDispatch, useSelector } from "react-redux"
+import { useNavigate } from "react-router-dom"
 import { SetIsCartOpen } from "../../store/cart/cart-reducer"
 import { CartCountSelect, CartOpenSelect } from "../../store/cart/cart-selector"
+import { UserSelector } from '../../store/user/user-selector'
+
 
 
 export const Logo =()=>{
@@ -29,10 +32,19 @@ export const LogoutIcon = () =>{
     )
 }
 export const CartIcon = () => {
+    const User = useSelector(UserSelector)
     const IsCartOpen = useSelector(CartOpenSelect)
     const CartCount = useSelector(CartCountSelect)
     const dispatch = useDispatch()
-    const toggle_cart = () => dispatch(SetIsCartOpen(!IsCartOpen))
+    const Navigate = useNavigate()
+    const toggle_cart = () =>{
+        if(!User){
+            Navigate('/signin')
+        }else{
+            dispatch(SetIsCartOpen(!IsCartOpen))
+        }
+        
+    } 
     return (
         <div className="relative" onClick={toggle_cart}>
             <div className="absolute bg-red-500 rounded-full text-white text-xs -right-1 px-1 -top-1 z-0">{CartCount>99?'99+':CartCount}</div>

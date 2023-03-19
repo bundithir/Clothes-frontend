@@ -12,6 +12,7 @@ const Men =()=>{
     const dispatch = useDispatch()
     useEffect(()=>{
         dispatch(FetchProductasync('men'))
+        // console.log(import.meta.env.VITE__STRIPE_PUBLISHABLE_KEY)
     },[])
 
     return(
