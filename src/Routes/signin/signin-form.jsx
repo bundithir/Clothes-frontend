@@ -34,7 +34,7 @@ const SigninForm = ()=>{
         }
     }
     return(
-        <div className='flex justify-center items-center mt-[5rem]'>
+        <div className='flex justify-center items-center mt-[5rem] mb-[6rem]'>
             <form onSubmit={handleSubmit} className='flex flex-col p-5 gap-[1rem] rounded-xl shadow-xl w-[340px] bg-white border'>
                 <Logoform />
                 <input type="email" name = 'email' onChange={handleinput} value={email} placeholder='Email' required className='border p-2 border-black focus:outline-none'/>
